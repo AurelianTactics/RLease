@@ -17,3 +17,8 @@ def get_save_path_and_make_save_directory(file_name, file_dir = "/rlease_results
     save_path = save_dir + file_name
     return save_path
 
+
+def pickle_file(file_name, save_object):
+    with open(filename, 'wb') as handle:
+        pickle.dump(save_object, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
