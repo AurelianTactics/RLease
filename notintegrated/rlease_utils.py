@@ -1,9 +1,10 @@
 '''
 Utilities for various scripts
 '''
-
+import pickle
 from os.path import expanduser
-import pandas as pd
+from pathlib import Path
+
 
 def get_save_path_and_make_save_directory(file_name, file_dir = "/rlease_results/"):
     """
@@ -19,19 +20,8 @@ def get_save_path_and_make_save_directory(file_name, file_dir = "/rlease_results
 
 
 def pickle_file(file_name, save_object):
-    with open(filename, 'wb') as handle:
+    with open(file_name, 'wb') as handle:
         pickle.dump(save_object, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def save_multiagent_results(file_name, save_object, file_dir="/rlease_results/"):
-  save_path = get_save_path_and_make_save_directory(file_name, file_dir)
-  pickle_file(save_path, save_object)
-
-
-def print_league_table(stats_dict):
-  #df =
-  pass
-
-def print_head_to_head_table(stats_dict):
-  pass
 

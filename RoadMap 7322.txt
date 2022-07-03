@@ -1,0 +1,17 @@
+# version 0.001
+* DONE move the basic botbowl vf code into repo
+* DONE move the basic botbowl trueskill and eval code into the repo
+* DONE integrate the trueskill code with some of the multiagent_zero_sum.py code
+* tidy up/stub out the multiagent_zero_sum code
+* integrate true_skill with the multi agent code
+	* too much plotting and printing in the true skill, abstract this
+* get basic agent eval loop working with botbowl
+* make/stubout some basic pandas plot functions
+
+
+# version 0.002
+* get the vf/reward plotting code to be abstracted a bit
+	* trajectory grabber and preparer code
+	* ipynb code
+* get it to work with some env or library of sorts
+
