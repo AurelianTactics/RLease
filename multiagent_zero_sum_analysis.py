@@ -17,7 +17,6 @@ last action:
   need to do play and print functions but kind of already have those on linux
 
 
-
 conceptionally,
 want an outer loop that takes agents, plays them against each other, gets results, display results
 
@@ -41,7 +40,6 @@ Display results
   plots
 
 so minimal version of this is above with display results being minimal
-
 
 
 to do

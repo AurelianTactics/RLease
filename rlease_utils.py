@@ -35,3 +35,9 @@ def print_league_table(stats_dict):
 def print_head_to_head_table(stats_dict):
   pass
 
+def print_multiagent_eval(args_dict):
+    # print overview
+
+    #arg to print head to head
+    pass
+

@@ -2,7 +2,7 @@
 * DONE move the basic botbowl vf code into repo
 * DONE move the basic botbowl trueskill and eval code into the repo
 * DONE integrate the trueskill code with some of the multiagent_zero_sum.py code
-* tidy up/stub out the multiagent_zero_sum code
+* DONE tidy up/stub out the multiagent_zero_sum_analysis.py code
 * integrate true_skill with the multi agent code
 	* too much plotting and printing in the true skill, abstract this
 * get basic agent eval loop working with botbowl
