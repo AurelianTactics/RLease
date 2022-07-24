@@ -1,0 +1,47 @@
+# working
+* DONE think how you would abstract it for parallel, lot of loops, lot of evaluations 
+	# DONE how you would describe the process (did stratego have a picture?)
+# moving code from analysis to mazs class
+	DONE fill in adding agents to existing dict
+	DONE finish up creating MAZS dict 
+	DONE go to next step in run() and move it over 
+	fill out the play game function
+
+# in play_game of mzsa.py
+	# fill out the play game results to figure out the dicts
+	# tidy up the dicts needed, maybe just do one mega dict with keys
+	# one of the dicts uses game_number as a key, how to handle that
+
+# version 0.001
+* DONE move the basic botbowl vf code into repo
+* DONE move the basic botbowl trueskill and eval code into the repo
+* DONE integrate the trueskill code with some of the multiagent_zero_sum.py code
+* DONE tidy up/stub out the multiagent_zero_sum_analysis.py code
+* TEST integrate true_skill with the multi agent code
+	* too much plotting and printing in the true skill, abstract this
+* pritn function for WLD and H2H need to be abstracted
+* save function probably needs to be extracted
+	* at least add a to do section: more dynamic saving, cloud saving, result by result saving
+
+* Tidy up, see notes below
+* get basic agent eval loop working with botbowl
+* make/stubout some basic pandas plot functions
+* make list of to do and improvements
+	* save results as they occur, batch meta results instead of all at once
+
+
+# version 0.002
+* get the vf/reward plotting code to be abstracted a bit
+	* trajectory grabber and preparer code
+	* ipynb code
+* get it to work with some env or library of sorts
+
+rlease improvement overview
+	I want a class and not functions since different envs and eval types will have different things attached to the classes even if usign the same function
+		ie attach an ELO class or a TRUESKILL class etc
+	for now doing the 5 dicts, but put them all into 1 since it is easier to pass round
+		and assign to self
+	then run time, instantiate the class with args and a set up
+		then either in the loop or in the class use the args to run it and get results
+	then when results dict is saved, use print and pandas to display some results
+
