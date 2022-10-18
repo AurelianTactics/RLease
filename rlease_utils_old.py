@@ -42,7 +42,7 @@ def print_multiagent_eval(results_dict, rankings_dict, args_dict):
     args_dict: from yaml/argparse, specifications for what to display
     '''
     # print league table
-    print_league_table(rankings_dict)
+    print_league_table(rankings_dict) 
     # print head to head
     if 'is_print_hth' in args_dict:
       print_head_to_head_table(results_dict)
@@ -50,7 +50,7 @@ def print_multiagent_eval(results_dict, rankings_dict, args_dict):
     pass
 
 
-# print WLD dict
+# print WLD dict 
 # placeholder
 def print_rankings_wld_dict(w_dict, a_dict, r_dict):
     GAME_RESULT_WIN = "W"
