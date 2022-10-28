@@ -35,7 +35,7 @@ def main():
     agent = RLeaseAgent(args_dict)
     env = load_env(args_dict)
 
-    get_trajectory_stats(agent, env, args_dict)
+    trajectory_stats.get_trajectory_stats(agent, env, args_dict)
 
 
 if __name__ == "__main__":

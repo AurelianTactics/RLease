@@ -1,4 +1,24 @@
-# working
+#working 102822
+get minimal action dist code and example up
+simple cartpole
+	ray or cleanrl or both
+ray loading a trained agent code is needed
+	have example loading locally and in some non integrated
+	work that into RLease agent code
+		to do: best way to abstract this?
+		end user just should send in a fp and the library right? then rlease handles it?
+		alternative is user supplies a loaded agent but taht wouldn't work cuz I have some customized code
+
+need code of making env and agent, customize but abstract
+		make class for each
+		env: base gym env arg and return
+		ray_env (how to register)
+		citylearn env option
+	use the basic trajectory stats code
+	make sure the trajectory log and rlease_utils support scripts work
+
+
+# working old
 * DONE think how you would abstract it for parallel, lot of loops, lot of evaluations 
 	# DONE how you would describe the process (did stratego have a picture?)
 # moving code from analysis to mazs class
@@ -44,4 +64,7 @@ rlease improvement overview
 	then run time, instantiate the class with args and a set up
 		then either in the loop or in the class use the args to run it and get results
 	then when results dict is saved, use print and pandas to display some results
+
+longer term
+	loading and abstracting the agent input could be done better maybe? maybe think it through for best user experience
 
