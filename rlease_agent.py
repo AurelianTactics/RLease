@@ -25,15 +25,6 @@ class RLeaseAgent():
         else:
             raise KeyError('rl_library key must be specified')
 
-        if 'is_gym_registered' in kwargs and 'env_name' in kwargs:
-            env = gym.make(kwargs['env_name'])
-        else:
-            pass
-            #create env based on env type
-            # if 'env_create_type' in kwargs:
-            #     env_create_type = kwargs['env_create_type']
-            #     if env_create_type == 'rllib':
-
         self.agent = self.load_agent(**kwargs)
 
     def get_action_vf(self, obs):
@@ -62,4 +53,43 @@ class RLeaseAgent():
     def load_agent(self, kwargs):
         '''
         return an agent
+
+        to do: abstract this away into an inherited class
+        to do read from kwargs (or an agent yaml config)?
+        ray: may need to do a custom env
         '''
+        if self.rl_library == RL_LIBRARY_RAY_2v0:
+            if 'is_gym_registered' in kwargs and 'env_name' in kwargs:
+                self.env = gym.make(kwargs['env_name'])
+            else:
+                raise ValueError("ERROR: functionality not yet implemented")
+            restore_config = {
+                "framework": "torch",
+                "num_workers": 1,
+            }
+
+            trainer = PPOTrainer(config=restore_config, env=self.env)
+        else:
+            raise ValueError("Error: this library is not supported")
+        # # custom env example
+        # def env_creator_sa(args):
+        #     schema = 'citylearn_challenge_2022_phase_1'
+        #     env = CityLearnEnv(schema=schema)
+        #     sa_env = SingleAgentSingleBuildingCityLearnEnv(env)
+        #
+        #     return sa_env
+        #
+        # # env = env_creator_sa({})
+        # register_env("citylearn_rllib_env", env_creator_sa)
+        #
+        # restore_config = {
+        #     "framework": "torch",
+        #     # "model": model_config,
+        #     # "multiagent": {
+        #     #     "policies": rc_policies,
+        #     #     "policy_mapping_fn": rc_policy_mapping_fn,
+        #     # },
+        #     "num_workers": 1,
+        # }
+        #
+        # trainer = PPOTrainer(config=restore_config, env="citylearn_rllib_env")

@@ -1,8 +1,14 @@
 #working 102822
-get minimal action dist code and example up
+get minimal action and vf dist code and example up
+	simple ray cartpole
+	TEST outerframework
+	TEST create agent
+	create env
+	evaluation code
+
 simple cartpole
 	ray or cleanrl or both
-ray loading a trained agent code is needed
+TEST ray loading a trained agent code is needed
 	have example loading locally and in some non integrated
 	work that into RLease agent code
 		to do: best way to abstract this?
