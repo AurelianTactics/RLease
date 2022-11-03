@@ -3,8 +3,8 @@ get minimal action and vf dist code and example up
 	simple ray cartpole
 	TEST outerframework
 	TEST create agent
-	create env
-	evaluation code
+	TEST create env
+	evaluation code: distribution actions, traj vf. see email
 
 simple cartpole
 	ray or cleanrl or both

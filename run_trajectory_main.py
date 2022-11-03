@@ -13,8 +13,9 @@ this should work with other things that run on an env loop.
 import yaml
 import argparse
 import trajectory_stats
-import rlease_agent
-import rlease_env
+from rlease_agent import RLeaseAgent
+from rlease_env import RLeaseEnv
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--yaml-filepath", type=str, default="", help="load arguments from this file", required=True)
@@ -35,7 +36,7 @@ def main():
         args_dict = make_args_dict(args)
 
     rlease_agent = RLeaseAgent(args_dict)
-    rlease_env = load_env(args_dict)
+    rlease_env = RLeaseEnv(args_dict)
 
     trajectory_stats.get_trajectory_stats(agent, env, args_dict)
 
