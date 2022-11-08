@@ -3,11 +3,17 @@
 '''
 Given an agent and env, run a trajectory and collect stats
 
-to do
 
-longer term
-this should work with other things that run on an env loop.
-    not exactly sure but like if you wanted to do like self play stats in the loop do that here as well
+further improvements
+this module works with others
+better plotting
+wandb integration
+tb integration
+abstract env class
+abstract agent class
+more examples
+more envs
+more rl libraries 
 '''
 
 import yaml

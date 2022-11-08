@@ -6,23 +6,6 @@ get minimal action and vf dist code and example up
 	TEST create env
 	evaluation code: distribution actions, traj vf. see email
 
-simple cartpole
-	ray or cleanrl or both
-TEST ray loading a trained agent code is needed
-	have example loading locally and in some non integrated
-	work that into RLease agent code
-		to do: best way to abstract this?
-		end user just should send in a fp and the library right? then rlease handles it?
-		alternative is user supplies a loaded agent but taht wouldn't work cuz I have some customized code
-
-need code of making env and agent, customize but abstract
-		make class for each
-		env: base gym env arg and return
-		ray_env (how to register)
-		citylearn env option
-	use the basic trajectory stats code
-	make sure the trajectory log and rlease_utils support scripts work
-
 
 # working old
 * DONE think how you would abstract it for parallel, lot of loops, lot of evaluations 
