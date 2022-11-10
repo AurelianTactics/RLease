@@ -5,6 +5,14 @@ get minimal action and vf dist code and example up
 	TEST create agent
 	TEST create env
 	evaluation code: distribution actions, traj vf. see email
+test MA sp
+probe envs
+	fill out the env
+		keys
+		args
+		logic
+	test in notebook
+	test it can train
 
 
 # working old
