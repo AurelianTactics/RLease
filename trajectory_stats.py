@@ -28,6 +28,7 @@ mlflow (or other alternative) logging?
 import trajectory_builder
 
 def get_trajectory_stats(agent, env, args_dict):
+    args_dict = args_dict['trajectory_args']
     project_name = args_dict.get('project_name', '')
     num_episodes = args_dict.get('num_episodes', 10)
     save_interval = args_dict.get('save_interval', 100)

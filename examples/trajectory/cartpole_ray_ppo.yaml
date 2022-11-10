@@ -1,0 +1,14 @@
+settings:
+  trajectory_args:
+    project_name: 'example_cartpole_ray'
+    num_episodes: 10
+    save_interval: 100
+    is_log_obs: False
+    log_info_dict: None
+    logging_args: None
+  agent_filepath: 'examples/trajetory/cartpole_ray_ppo_agent_checkpoint'
+  rl_library: rl_library_ray_2v0
+  is_gym_registered: True
+  env_name: 'CartPole-v0'
+  rl_algorithm: 'ppo'
+  env_type: 'env_type_gym'

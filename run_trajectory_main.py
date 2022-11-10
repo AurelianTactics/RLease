@@ -3,18 +3,25 @@
 '''
 Given an agent and env, run a trajectory and collect stats
 
-to do
 
-longer term
-this should work with other things that run on an env loop.
-    not exactly sure but like if you wanted to do like self play stats in the loop do that here as well
+further improvements
+this module works with others
+better plotting
+wandb integration
+tb integration
+abstract env class
+abstract agent class
+more examples
+more envs
+more rl libraries 
 '''
 
 import yaml
 import argparse
 import trajectory_stats
-import rlease_agent
-import rlease_env
+from rlease_agent import RLeaseAgent
+from rlease_env import RLeaseEnv
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--yaml-filepath", type=str, default="", help="load arguments from this file", required=True)
@@ -35,7 +42,7 @@ def main():
         args_dict = make_args_dict(args)
 
     rlease_agent = RLeaseAgent(args_dict)
-    rlease_env = load_env(args_dict)
+    rlease_env = RLeaseEnv(args_dict)
 
     trajectory_stats.get_trajectory_stats(agent, env, args_dict)
 

@@ -7,7 +7,7 @@ from collections import OrderedDict
 from trueskill import Rating, quality_1vs1, rate_1vs1
 from rlease_utils import print_league_table, print_head_to_head, save_multiagent_results
 import yaml
-from multi_agent_zero_sum import MultiAgentZeroSum
+from multiagent_zero_sum import MultiAgentZeroSum
 
 def create_arg_dict(args):
     arg_dict = {
