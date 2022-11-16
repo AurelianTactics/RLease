@@ -6,11 +6,9 @@ Based on ideas from Andy Jones RL Debugging
 
 '''
 working
-DONE read in the config options
-DONE define obs and action spaces
-done logic
-step logic
-
+test this
+document this better
+write up ideas for future envs
 
 ideas
 can scale this up behond these simple examples (maybe more abastracted env)
@@ -58,16 +56,19 @@ class DebugGym(gym.Env):
 
     def reset(self):
         self.timestep_current = 0
-        if self.timestep_current == self.timestep_max:
-            is_goal = True
-        else:
-            is_goal = False
+        is_goal = self._calculate_done(self.timestep_current, self.timestep_max)
         obs = self._calculate_obs(self.obs_type, is_goal)
 
         return obs
 
-    def step(self):
-        pass
+    def step(self, action):
+        self.timestep_current += 1
+        obs = self._define_obs_space(self.obs_type)
+        done = self._calculate_done(self.timestep_current, self.timestep_max)
+        reward = self._calculate_reward(action, obs, done, self.reward_type)
+        info = {}
+
+        return obs, reward, done, info
     
     def render(self):
         pass
@@ -75,8 +76,10 @@ class DebugGym(gym.Env):
     def _define_obs_space(self, obs_type):
         return gym.spaces.Discrete(1)
 
-    def _calcualte_done(self):
-        pass
+    def _calculate_done(self, ts_current, ts_max):
+        if ts_current >= ts_max:
+            return True
+        return False
     
     def _calculate_obs(self, obs_type, is_goal):
         if obs_type == OBS_TYPE_ZERO_OBS:
