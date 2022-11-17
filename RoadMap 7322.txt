@@ -13,7 +13,19 @@ probe envs
 		logic
 	test in notebook
 	test it can train
-
+corr between end goal reward
+	some scrap code in rlease_vf_function_plots.ipynb for this
+		test it
+		move into python script
+		print plots maybe?
+		track key stats in aggregate
+		option for end goal
+mid goal reward
+	write code in rlease_vf_function_plots.ipynb
+		do non zero option and zero option
+		for non zero, subset df by != zero and take corr of two columns
+		for the other steps shift the df where possible
+			might have to drop early reward if not something x steps behind it 
 
 # working old
 * DONE think how you would abstract it for parallel, lot of loops, lot of evaluations 
