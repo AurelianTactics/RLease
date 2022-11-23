@@ -7,10 +7,10 @@ minimal eval code
 		histograms, max, min reward, other ideas from blogs and packages
 get minimal action and vf dist code and example up
 	simple ray cartpole
-		create conda env for ray21
-		install ray21
-		install matching torch/tf
-		create simple checkpoint
+		DONE create conda env for ray21
+		DONE install ray21
+		DONE install matching torch/tf
+		DONE create simple checkpoint
 		load checkpoint and smoke test it
 	TEST outerframework
 	TEST create agent

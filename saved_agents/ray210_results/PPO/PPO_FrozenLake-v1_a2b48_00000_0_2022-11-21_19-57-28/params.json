@@ -1,0 +1,12 @@
+{
+  "env": "FrozenLake-v1",
+  "framework": "torch",
+  "model": {
+    "fcnet_activation": "relu",
+    "fcnet_hiddens": [
+      64,
+      64
+    ]
+  },
+  "num_workers": 2
+}
