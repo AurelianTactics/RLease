@@ -1,4 +1,8 @@
 #working 102822
+basic eval framework
+	NOT NEEDED add an argument to run_trajectory_main.py for reward and longer
+	STOPPED HERE collect it in trajectory_stats
+	add more plotting in trajectory plot
 get minimal action and vf dist code and example up
 	simple ray cartpole
 	TEST outerframework

@@ -35,9 +35,11 @@ def get_trajectory_stats(agent, env, args_dict):
     logging_args = args_dict.get('logging_args', None)
     is_log_obs = args_dict.get('is_log_obs', False)
     log_info_dict = args_dict.get('log_info_dict', None)
+    is_eval_agent_basic = args_dict.get('is_eval_agent_basic', True)
 
     trajectory_builder = TrajectoryBuilder(project_name=project_name)
-
+    if is_eval_agent_basic:
+        eval_agent_basic_builder = TrajectoryBuilder(project_name=project_name+"_eval_basic")
     for ep in range(num_episodes):
         done = False
         obs = env.reset()
