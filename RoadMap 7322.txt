@@ -1,23 +1,24 @@
 #working 102822
-basic eval framework
+TEST basic eval framework
 	NOT NEEDED add an argument to run_trajectory_main.py for reward and longer
-	STOPPED HERE collect it in trajectory_stats
-	add more plotting in trajectory plot
+	DONE collect it in trajectory_stats
+	STOPPED HERE add more plotting in trajectory plot
+	DONE longer term things
 get minimal action and vf dist code and example up
 	simple ray cartpole
 	TEST outerframework
 	TEST create agent
 	TEST create env
 	evaluation code: distribution actions, traj vf. see email
-test MA sp
-probe envs
+TEST MA sp
+TEST probe envs
 	fill out the env
 		keys
 		args
 		logic
 	test in notebook
 	test it can train
-corr between end goal reward
+TEST corr between end goal reward
 	some scrap code in rlease_vf_function_plots.ipynb for this
 		test it
 		move into python script
@@ -31,6 +32,13 @@ mid goal reward
 		for the other steps shift the df where possible
 			might have to drop early reward if not something x steps behind it 
 
+Longer term
+	basic plots
+		random seeds, confidence intervals, etc from that paper
+		min, max, histograms
+		other ideas
+
+		
 # working old
 * DONE think how you would abstract it for parallel, lot of loops, lot of evaluations 
 	# DONE how you would describe the process (did stratego have a picture?)

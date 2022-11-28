@@ -73,3 +73,21 @@ def plot_trajectory(df_input, **kwargs):
     fp = 'trajectory_plot_{}'.format(time_int)
     plot_reward_vs_vf(df_input.copy(), fp=fp, num_episodes=10)
     plot_action_distribution(df_input, fp)
+
+
+def plot_episode_stats(df_input, **kwargs):
+    '''
+    Plot mean reward and episode length
+    Bunch of to dos, in the roadmap for expanding
+    '''
+    # STOPPED HRE
+    # get running mean from args
+    # create the vector
+    # create and save the lineplot
+    sns.lineplot(y=running_reward_col, x=episode, data=df, ax=ax)
+    #ax.set_xticks(xtick_index)
+    #ax.set_ylabel('{} / {}'.format(vf_col, reward_col))
+    plt.savefig(fp + "episode_reward_plot_{}.png".format(saved_plots))
+
+    sns.lineplot(y=running_length_col, x=episode, data=df, ax=ax)
+    plt.savefig(fp + "episode_length_plot_{}.png".format(saved_plots))

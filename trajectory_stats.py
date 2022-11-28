@@ -44,11 +44,13 @@ def get_trajectory_stats(agent, env, args_dict):
         done = False
         obs = env.reset()
         timestep = 0
+        reward_total = 0.
 
         while not done:
             action, vf = agent.get_action_vf(obs)
 
             next_obs, reward, done, info = env.step(action)
+            reward_total += reward
 
             # build dictionary of stats wanted to store
             # to do: functionize, add arguments for storing more/less
@@ -71,8 +73,14 @@ def get_trajectory_stats(agent, env, args_dict):
             trajectory_builder.add_values(**step_dict)
 
             if done:
+                episode_dict ={
+                    'reward_total': reward_total,
+                    'timestep_end': timestep,
+                }
+                eval_agent_basic_builder.add_values(**episode_dict)
                 if ep % save_interval == 0 and ep > 0:
                     trajectory_builder.save_and_clear()
+                    eval_agent_basic_builder.save_and_clear()
             else:
                 timestep += 1
                 obs = next_obs
