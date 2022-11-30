@@ -1,8 +1,15 @@
 #working 102822
+potential next things
+	think bigger picture, running many agents, and saving results
+	check other ideas for evaluations
+	fill out some of the to dos
+
+
+to test
 TEST basic eval framework
 	NOT NEEDED add an argument to run_trajectory_main.py for reward and longer
 	DONE collect it in trajectory_stats
-	STOPPED HERE add more plotting in trajectory plot
+	DONEadd more plotting in trajectory plot
 	DONE longer term things
 get minimal action and vf dist code and example up
 	simple ray cartpole
@@ -88,4 +95,4 @@ rlease improvement overview
 
 longer term
 	loading and abstracting the agent input could be done better maybe? maybe think it through for best user experience
-
+	every env/problem usually has some KPI that are custom. way to make this code flexible enough for that

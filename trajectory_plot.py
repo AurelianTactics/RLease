@@ -79,15 +79,17 @@ def plot_episode_stats(df_input, **kwargs):
     '''
     Plot mean reward and episode length
     Bunch of to dos, in the roadmap for expanding
+
+    add labels, test, etc
     '''
-    # STOPPED HRE
-    # get running mean from args
-    # create the vector
-    # create and save the lineplot
-    sns.lineplot(y=running_reward_col, x=episode, data=df, ax=ax)
-    #ax.set_xticks(xtick_index)
-    #ax.set_ylabel('{} / {}'.format(vf_col, reward_col))
+    running_average_n = kwargs.get('running_average_n', 100)
+    if df_input.shape[0] < running_average_n:
+        running_average_n = min(10, df_input.shape[0])
+
+    # reward plot running average
+    sns.lineplot(y=df.rolling(window=running_average_n)['reward_total'].mean())
     plt.savefig(fp + "episode_reward_plot_{}.png".format(saved_plots))
 
-    sns.lineplot(y=running_length_col, x=episode, data=df, ax=ax)
+    # episode length plot running average
+    sns.lineplot(y=df.rolling(window=running_average_n)['timestep_end'].mean())
     plt.savefig(fp + "episode_length_plot_{}.png".format(saved_plots))
