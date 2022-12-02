@@ -41,8 +41,8 @@ def main():
         quit()
         args_dict = make_args_dict(args)
 
-    rlease_agent = RLeaseAgent(args_dict)
-    rlease_env = RLeaseEnv(args_dict)
+    agent = RLeaseAgent(args_dict)
+    env = RLeaseEnv(args_dict)
 
     trajectory_stats.get_trajectory_stats(agent, env, args_dict)
 
