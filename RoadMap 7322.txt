@@ -3,13 +3,15 @@ potential next things
 	think bigger picture, running many agents, and saving results
 	check other ideas for evaluations
 	fill out some of the to dos
+	custom evals based on info
+		thinking build this up as you experience them
 
 
 to test
 TEST basic eval framework
 	NOT NEEDED add an argument to run_trajectory_main.py for reward and longer
 	DONE collect it in trajectory_stats
-	DONEadd more plotting in trajectory plot
+	DONE add more plotting in trajectory plot
 	DONE longer term things
 get minimal action and vf dist code and example up
 	simple ray cartpole
