@@ -73,3 +73,23 @@ def plot_trajectory(df_input, **kwargs):
     fp = 'trajectory_plot_{}'.format(time_int)
     plot_reward_vs_vf(df_input.copy(), fp=fp, num_episodes=10)
     plot_action_distribution(df_input, fp)
+
+
+def plot_episode_stats(df_input, **kwargs):
+    '''
+    Plot mean reward and episode length
+    Bunch of to dos, in the roadmap for expanding
+
+    add labels, test, etc
+    '''
+    running_average_n = kwargs.get('running_average_n', 100)
+    if df_input.shape[0] < running_average_n:
+        running_average_n = min(10, df_input.shape[0])
+
+    # reward plot running average
+    sns.lineplot(y=df.rolling(window=running_average_n)['reward_total'].mean())
+    plt.savefig(fp + "episode_reward_plot_{}.png".format(saved_plots))
+
+    # episode length plot running average
+    sns.lineplot(y=df.rolling(window=running_average_n)['timestep_end'].mean())
+    plt.savefig(fp + "episode_length_plot_{}.png".format(saved_plots))
