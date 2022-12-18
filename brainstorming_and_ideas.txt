@@ -1,0 +1,6 @@
+arXiv:2108.13264 for possible statistical signifigance
+https://github.com/google-research/rliable
+Cicero reddit ama has some eval ideas and maybe code in the repo for debugging
+Tools for  viewi g the replay buffer see kangas for images
+Tools for  iewing images
+Gradient from nn and true gradient
