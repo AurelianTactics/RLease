@@ -20,12 +20,15 @@ ENV_TYPE_GYM = 'env_type_gym'
 
 
 class RLeaseEnv():
-  def __init__(self, **kwargs):
-    if 'env_type' in kwargs:
-      if kwargs['env_type'] == ENV_TYPE_GYM:
-        self.env = gym.make(kwargs['env_name'])
+  def __init__(self, env=None, **kwargs):
+    if env is not None:
+      self.env = env
     else:
-      raise ValueError('env type not supported')
+      if 'env_type' in kwargs:
+        if kwargs['env_type'] == ENV_TYPE_GYM:
+          self.env = gym.make(kwargs['env_name'])
+      else:
+        raise ValueError('env type not supported')
 
   def reset(self):
     # to do, handle non gym tpes
