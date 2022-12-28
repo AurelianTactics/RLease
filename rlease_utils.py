@@ -4,6 +4,8 @@ Utilities for various scripts
 
 from os.path import expanduser
 import pandas as pd
+import pickle
+from pathlib import Path
 
 def get_save_path_and_make_save_directory(file_name, file_dir = "/RLEase_results/"):
     """
@@ -12,15 +14,20 @@ def get_save_path_and_make_save_directory(file_name, file_dir = "/RLEase_results
     :param file_dir: directory to put file of file name in
     :return: a file path represented bya  string
     """
-    save_dir = expanduser('~') + file_dir
+    #save_dir = expanduser('~') + file_dir
+    save_dir = file_dir
     Path(save_dir).mkdir(parents=True, exist_ok=True)
     save_path = save_dir + file_name
+
     return save_path
 
 
-def pickle_file(file_name, save_object):
+def save_pickle_file(file_name, save_object):
     with open(filename, 'wb') as handle:
         pickle.dump(save_object, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+def make_directory(file_dir):
+    Path(file_dir).mkdir(parents=True, exist_ok=True)
 
 
 def save_multiagent_results(file_name, save_object, file_dir="/rlease_results/"):
@@ -116,4 +123,5 @@ def print_head_to_head_dict(hth_dict, is_print_hth):
 
         print("{} v {} | W%: {} v {} | D%: {} | pts: {} v {} | cas: {} v {} ".format(
             team_0, team_1, win_per_team_0, win_per_team_1, draw_per, avg_score_team_0, avg_score_team_1,)
-            #avg_casualties_team_0, avg_casualties_team_1))
+            avg_casualties_team_0, avg_casualties_team_1))
+        )

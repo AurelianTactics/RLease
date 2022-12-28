@@ -2,9 +2,11 @@
 Class for building trajectories
 '''
 
-from rlease_utils import pickle_file, get_save_path_and_make_save_directory
+import collections
+from rlease_utils import save_pickle_file, get_save_path_and_make_save_directory
 import time
-
+from typing import Any, Dict, List
+import pandas as pd
 
 
 class TrajectoryBuilder:
@@ -37,3 +39,23 @@ class TrajectoryBuilder:
             # clear buffers
             self.buffers.clear()
             self.count = 0
+
+    def get_dataframe(self):
+        '''
+        turn a builder object into a datframe
+
+        Returns
+        -------
+        df_out: pandas DataFrame
+            DataFrame of self.buffers
+        '''
+        try:
+            if 'values' in self.buffers.keys():
+                df_out = pd.DataFrame(self.buffers['values'])
+            else:
+                df_out = pd.DataFrame(self.buffers)
+        except Exception as e:
+            print("ERROR: unable to create dtaframe from builder, returning empty df ", e)
+            df_out = pd.DataFrame()
+
+        return df_out
