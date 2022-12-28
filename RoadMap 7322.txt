@@ -1,3 +1,16 @@
+# working 122722
+
+get basic functionality of release branch going for eval single agent
+	make a run_single_agent.py
+		args for evaluate and for trajectory
+		just do the evaluate for now, for trajectory do a warning
+DONE review non-integrated and misc files and organize them so know what is integrated and not
+make examples
+make docs
+	installation
+	basic usage
+
+
 #working 102822
 
 potential next things
@@ -109,6 +122,7 @@ rlease improvement overview
 		then either in the loop or in the class use the args to run it and get results
 	then when results dict is saved, use print and pandas to display some results
 
-longer term
+# longer term
 	loading and abstracting the agent input could be done better maybe? maybe think it through for best user experience
 	every env/problem usually has some KPI that are custom. way to make this code flexible enough for that
+	turn into a package that can be downloaded and installed
