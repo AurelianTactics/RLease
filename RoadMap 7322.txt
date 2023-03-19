@@ -1,3 +1,7 @@
+# working 31923
+rethink approach and initial goals to get something working an useful
+think what big picture things would be
+
 # working 122722
 
 get basic functionality of release branch going for eval single agent
